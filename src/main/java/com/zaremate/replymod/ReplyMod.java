@@ -178,7 +178,7 @@ public final class ReplyMod {
          */
         try {
             var context = parse.getContext();
-            Object value = context.getArgument("targets", Object.class);
+            Object value = context.getArguments().get("targets");
 
             if (value instanceof net.minecraft.commands.arguments.selector.EntitySelector selector) {
                 targets.addAll(selector.findPlayers(context.getSource()));
